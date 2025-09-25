@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One-Page Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .section {
+            padding-top: 80px; /* Thêm padding để nội dung không bị che bởi thanh nav */
+            padding-bottom: 80px;
+        }
+        #home-section {
+            min-height: calc(100vh - 80px); /* 100vh - chiều cao của nav */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f3f4f6;
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- Thanh điều hướng cố định -->
+    <nav class="fixed top-0 w-full z-50 bg-white transition-colors duration-300 shadow-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo hoặc Tên của bạn -->
+            <a href="#home" class="text-xl font-bold text-gray-900">Portfolio của tôi</a>
+            
+            <!-- Menu điều hướng -->
+            <ul id="nav-list" class="flex space-x-6 font-semibold">
+                <li><a href="#home" class="nav-link text-black px-4 py-2 rounded-full transition-all duration-300">Chính</a></li>
+                <li><a href="#about" class="nav-link text-black px-4 py-2 rounded-full transition-all duration-300">Giới thiệu</a></li>
+                <li><a href="#experience" class="nav-link text-black px-4 py-2 rounded-full transition-all duration-300">Kinh nghiệm</a></li>
+                <li><a href="#projects" class="nav-link text-black px-4 py-2 rounded-full transition-all duration-300">Project</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Phần Chính -->
+    <section id="home" class="section bg-white text-center flex flex-col items-center justify-center min-h-screen">
+        <div class="p-8 md:p-12 lg:p-16 rounded-3xl shadow-lg bg-gray-100 max-w-2xl mx-auto">
+            <h1 class="text-5xl lg:text-7xl font-bold text-gray-900 mb-4 animate-fade-in-down">Chào mừng bạn đến với trang web của tôi</h1>
+            <p class="text-xl text-gray-600 animate-fade-in-up">Đây là một trang web one-page đơn giản nhưng hiệu quả để giới thiệu bản thân.</p>
+        </div>
+    </section>
+
+    <!-- Phần Giới thiệu -->
+    <section id="about" class="section bg-gray-50 flex items-center justify-center">
+        <div class="container mx-auto px-6 py-12 md:py-16 lg:py-24">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-center text-gray-800 mb-8">Giới thiệu</h2>
+                <div class="bg-white p-8 md:p-12 rounded-3xl shadow-xl">
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Tôi là một lập trình viên trẻ với niềm đam mê xây dựng các giải pháp web sáng tạo. Tôi thích học hỏi những công nghệ mới và áp dụng chúng để tạo ra những sản phẩm chất lượng, mang lại trải nghiệm tốt nhất cho người dùng. Ngoài ra, tôi cũng rất hứng thú với việc giải quyết các vấn đề phức tạp và tối ưu hóa hiệu suất của ứng dụng.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phần Kinh nghiệm -->
+    <section id="experience" class="section bg-gray-100 flex items-center justify-center">
+        <div class="container mx-auto px-6 py-12 md:py-16 lg:py-24">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-8">Kinh nghiệm</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Vị trí 1 -->
+                <div class="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-semibold text-gray-800">Lập trình viên Web</h3>
+                    <p class="text-gray-500 mb-4">Công ty A | 2022 - Hiện tại</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Phát triển và duy trì các ứng dụng web sử dụng React và Node.js.</li>
+                        <li>Tối ưu hóa hiệu suất trang web và cải thiện trải nghiệm người dùng.</li>
+                        <li>Làm việc với đội ngũ để thiết kế và triển khai các tính năng mới.</li>
+                    </ul>
+                </div>
+                <!-- Vị trí 2 -->
+                <div class="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-semibold text-gray-800">Thực tập sinh</h3>
+                    <p class="text-gray-500 mb-4">Công ty B | 2021 - 2022</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Hỗ trợ phát triển giao diện người dùng bằng HTML, CSS và JavaScript.</li>
+                        <li>Tham gia vào quá trình kiểm thử và sửa lỗi ứng dụng.</li>
+                        <li>Học hỏi các quy trình phát triển phần mềm chuyên nghiệp.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phần Project -->
+    <section id="projects" class="section bg-gray-50 flex items-center justify-center">
+        <div class="container mx-auto px-6 py-12 md:py-16 lg:py-24">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-8">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Project 1 -->
+                <div class="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-transform transform hover:scale-105 duration-300">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Ứng dụng quản lý công việc</h3>
+                    <p class="text-gray-600 mb-4">Một ứng dụng web giúp người dùng theo dõi và quản lý các công việc hàng ngày một cách hiệu quả.</p>
+                </div>
+                <!-- Project 2 -->
+                <div class="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-transform transform hover:scale-105 duration-300">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Trang web thương mại điện tử</h3>
+                    <p class="text-gray-600 mb-4">Dự án mô phỏng một cửa hàng trực tuyến với các chức năng như giỏ hàng, thanh toán và quản lý sản phẩm.</p>
+                </div>
+                <!-- Project 3 -->
+                <div class="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-transform transform hover:scale-105 duration-300">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Blog cá nhân</h3>
+                    <p class="text-gray-600 mb-4">Một trang blog đơn giản được xây dựng từ đầu, cho phép đăng bài viết, bình luận và phân loại bài viết.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const nav = document.querySelector('nav');
+
+            function setActiveLink() {
+                let current = '';
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - nav.offsetHeight - 5; 
+                    if (window.scrollY >= sectionTop) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('bg-gray-200');
+                    link.classList.remove('text-gray-900');
+                    link.classList.add('bg-transparent');
+                    link.classList.add('text-black');
+
+                    if (link.href.includes(current)) {
+                        link.classList.add('bg-gray-200');
+                        link.classList.add('text-gray-900');
+                        link.classList.remove('bg-transparent');
+                        link.classList.remove('text-black');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', setActiveLink);
+            setActiveLink(); // Gọi hàm khi tải trang để đặt trạng thái ban đầu
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    
+                    if (targetSection) {
+                        window.scrollTo({
+                            top: targetSection.offsetTop - nav.offsetHeight,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

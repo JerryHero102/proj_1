@@ -1,0 +1,30 @@
+* {
+    padding: 0px;
+    margin:  0px;
+    box-sizing: border-box;
+}
+#toolbar {
+    text-align: center;
+    line-height: 30px;
+    margin-top: 20px ;
+}
+
+#toolbar > #nav {
+    background-color: #000;
+    display: inline-block;
+    border-radius: 50px;
+    padding: 0px 20px;
+}
+
+#toolbar > #nav li {
+    color: #fff;
+    direction: none;
+    display: inline-block;
+    margin: 0px 10px;
+}
+
+#toolbar > #nav li:hover {
+    background-color: #eee;
+    color: #000;
+    cursor: pointer;
+}
