@@ -25,22 +25,20 @@
     </style>
 </head>
 <body class="bg-white">
-
-    <!-- Thanh điều hướng cố định -->
-    <nav class="fixed top-0 w-full z-50 bg-white transition-colors duration-300 shadow-md">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- Logo hoặc Tên của bạn -->
-            <a href="#home" class="text-xl font-bold text-gray-900">Portfolio của tôi</a>
-            
+    <!--  -->
+    <!-- Thanh điều hướng-->
+   <nav class="fixed top-[10px] w-full z-50 flex justify-center items-center bg-transparent transition-colors duration-300">
+        <div class="h-[50px] bg-gray-950 mx-auto inline-flex justify-center items-center rounded-full px-4">
             <!-- Menu điều hướng -->
-            <ul id="nav-list" class="flex space-x-6 font-semibold">
-                <li><a href="#home" class="nav-link text-black px-4 py-2 rounded-full transition-all duration-300">Chính</a></li>
-                <li><a href="#about" class="nav-link text-black px-4 py-2 rounded-full transition-all duration-300">Giới thiệu</a></li>
-                <li><a href="#experience" class="nav-link text-black px-4 py-2 rounded-full transition-all duration-300">Kinh nghiệm</a></li>
-                <li><a href="#projects" class="nav-link text-black px-4 py-2 rounded-full transition-all duration-300">Project</a></li>
+            <ul id="nav-list" class="flex space-x-2 font-semibold">
+                <li><a href="#home" class="nav-link text-white text-sm px-4 py-2 rounded-full transition-all duration-300">Chính</a></li>
+                <li><a href="#about" class="nav-link text-white text-sm px-4 py-2 rounded-full transition-all duration-300">Giới thiệu</a></li>
+                <li><a href="#experience" class="nav-link text-white text-sm px-4 py-2 rounded-full transition-all duration-300">Kinh nghiệm</a></li>
+                <li><a href="#projects" class="nav-link text-white text-sm px-4 py-2 rounded-full transition-all duration-300">Project</a></li>
             </ul>
         </div>
     </nav>
+
 
     <!-- Phần Chính -->
     <section id="home" class="section bg-white text-center flex flex-col items-center justify-center min-h-screen">
@@ -51,7 +49,7 @@
     </section>
 
     <!-- Phần Giới thiệu -->
-    <section id="about" class="section bg-gray-50 flex items-center justify-center">
+    <section id="about" class="h-screen section bg-gray-50 flex items-center justify-center">
         <div class="container mx-auto px-6 py-12 md:py-16 lg:py-24">
             <div class="max-w-4xl mx-auto">
                 <h2 class="text-4xl font-bold text-center text-gray-800 mb-8">Giới thiệu</h2>
@@ -65,7 +63,7 @@
     </section>
 
     <!-- Phần Kinh nghiệm -->
-    <section id="experience" class="section bg-gray-100 flex items-center justify-center">
+    <section id="experience" class="h-screen section bg-gray-100 flex items-center justify-center">
         <div class="container mx-auto px-6 py-12 md:py-16 lg:py-24">
             <h2 class="text-4xl font-bold text-center text-gray-800 mb-8">Kinh nghiệm</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -94,7 +92,7 @@
     </section>
 
     <!-- Phần Project -->
-    <section id="projects" class="section bg-gray-50 flex items-center justify-center">
+    <section id="projects" class="h-screen section bg-gray-50 flex items-center justify-center">
         <div class="container mx-auto px-6 py-12 md:py-16 lg:py-24">
             <h2 class="text-4xl font-bold text-center text-gray-800 mb-8">Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -147,9 +145,24 @@
                     }
                 });
             }
+            function toggleNav() {
+                const homeSection = document.getElementById('home');
+                if (!homeSection) return;
 
-            window.addEventListener('scroll', setActiveLink);
-            setActiveLink(); // Gọi hàm khi tải trang để đặt trạng thái ban đầu
+                const homeBottom = homeSection.offsetTop + homeSection.offsetHeight;
+                if (window.scrollY < homeBottom - nav.offsetHeight) {
+                    nav.classList.add('hidden');   // Ẩn nav khi ở home
+                } else {
+                    nav.classList.remove('hidden'); // Hiện nav khi ra khỏi home
+                }
+            }
+             window.addEventListener('scroll', () => {
+                setActiveLink();
+                toggleNav();
+            });
+
+            setActiveLink();
+            toggleNav();
 
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
